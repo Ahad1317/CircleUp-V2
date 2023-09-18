@@ -6,9 +6,16 @@ import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import MailOutlineOutlinedIcon from "@mui/icons-material/MailOutlineOutlined";
 import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
 import NotificationsActiveOutlinedIcon from "@mui/icons-material/NotificationsActiveOutlined";
+import WbSunnyOutlinedIcon from "@mui/icons-material/WbSunnyOutlined";
 import { Link } from "react-router-dom";
- 
+import { useContext } from "react";
+import { DarkModeContext } from "../../context/darkModeContext";
+import { AuthContext } from "../../context/authContext";
+
 const Navbar = () => {
+  const { toggle, darkMode } = useContext(DarkModeContext);
+  const { currentUser } = useContext(AuthContext);
+
   return (
     <div className="navbar">
       <div className="left">
@@ -16,20 +23,28 @@ const Navbar = () => {
           <span>CircleUP</span>
         </Link>
         <HomeOutlinedIcon />
-        <NightsStayOutlinedIcon />
+        {darkMode ? ( <WbSunnyOutlinedIcon onClick={toggle}
+           />
+        ) : (
+          <NightsStayOutlinedIcon onClick={toggle}
+/>
+        )}
         <AirplayOutlinedIcon />
         <div className="search">
-          <SearchOutlinedIcon/>
+          <SearchOutlinedIcon />
           <input type="text" placeholder="Search..." />
         </div>
       </div>
       <div className="right">
-        <PersonOutlineOutlinedIcon/>
-        <MailOutlineOutlinedIcon/>
-        <NotificationsActiveOutlinedIcon/>
+        <PersonOutlineOutlinedIcon />
+        <MailOutlineOutlinedIcon />
+        <NotificationsActiveOutlinedIcon />
         <div className="user">
-          <img src="https://media.licdn.com/dms/image/D5603AQHgzl2zw3fw8w/profile-displayphoto-shrink_800_800/0/1694108787694?e=1700092800&v=beta&t=EJyPDyZFF0ztzhK4PB2UdACqkWv1Uz6vOabJtMkgQHA" alt="" />
-          <span>Abdul Ahad</span>
+          <img
+            src={currentUser.profilePic}
+            alt=""
+          />
+          <span>{currentUser.name}</span>
         </div>
       </div>
     </div>
