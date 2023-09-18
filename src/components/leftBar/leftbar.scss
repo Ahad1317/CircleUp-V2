@@ -1,6 +1,7 @@
 @import "../../style.scss";
-.leftBar{
-    @include themify($themes){
+
+.leftBar {
+  @include themify($themes) {
     flex: 2;
     position: sticky;
     top: 70px;
@@ -10,55 +11,64 @@
     color: themed("textColor");
 
     @include mobile{
-        display: none;
-      }
+      display: none;
+    }
 
     &::-webkit-scrollbar {
-        display: none;
+      display: none;
+    }
+
+    .container {
+      padding: 20px;
+
+      hr {
+        margin: 20px 0px;
+        border: none;
+        height: 0.5px;
+        background-color: themed("border");
       }
 
-    .container{
-        padding: 20px;
-        hr{
-            margin: 20px 0px;
-            border: none;
-            height: 0.5px;
-            background-color: themed("border");
+      .menu {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        span {
+          font-size: 12px;
         }
-        .menu{
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            span{
-                font-size: 13px;
-            }
-            .user{
-                display: flex;
-                align-items: center;
-                gap: 10px;
-                img{
-                    margin-left: -2px;
-                    width: 35px;
-                    height: 35px;
-                    border-radius: 50%;
-                    object-fit: cover;
-                }
-                span{
-                    font-size: 14px;
-                }
-            }
-            .item{
-                display: flex;
-                align-items: center;
-                gap: 10px;
-                img{
-                    width: 30px;
-                }
-                span{
-                    font-size: 14px;
-                }
-            }
+
+        .user {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+
+          img {
+            margin-left: -2px;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            object-fit: cover;
+          }
+
+          span {
+            font-size: 14px;
+          }
         }
+
+        .item {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+
+          img {
+            width: 30px;
+          }
+
+          span {
+            font-size: 14px;
+          }
+        }
+      }
     }
-}
+  }
 }
