@@ -26,8 +26,8 @@ Here’s how you can run CircleUp v2 locally:
 
 1. **Clone the Repo**
    ```sh
-   git clone https://github.com/yourusername/CircleUpv2.git
-   cd CircleUpv2 
+   git clone https://github.com/Ahad1317/CircleUp-V2.git
+   cd CircleUp-V2 
    
 2. **Install dependencies**
    ```
