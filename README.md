@@ -27,6 +27,20 @@ Here’s how you can run CircleUp v2 locally:
 1. **Clone the Repo**
    ```sh
    git clone https://github.com/yourusername/CircleUpv2.git
+   cd CircleUpv2 
+   
+2. **Install dependencies**
+   ```
+   npm install
+   ```
+
+3. **Run the development server**
+   ```
+   npm run dev
+   ```
+Navigate to http://localhost:3000 to see your application in action.
+
+<br>
 
 License 📄
 CircleUp v2 is released under the MIT License. Check out the LICENSE file for more details.
